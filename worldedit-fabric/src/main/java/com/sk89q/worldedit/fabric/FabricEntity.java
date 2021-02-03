@@ -93,7 +93,7 @@ class FabricEntity implements Entity {
     public boolean remove() {
         net.minecraft.entity.Entity entity = entityRef.get();
         if (entity != null) {
-            entity.remove();
+            entity.remove(net.minecraft.entity.Entity.RemovalReason.KILLED);
         }
         return true;
     }
