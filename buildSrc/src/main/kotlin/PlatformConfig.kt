@@ -28,7 +28,7 @@ fun Project.applyPlatformAndCoreConfiguration() {
     apply(plugin = "com.github.johnrengelman.shadow")
     apply(plugin = "com.jfrog.artifactory")
 
-    ext["internalVersion"] = "$version+${rootProject.ext["gitCommitHash"]}"
+    ext["internalVersion"] = "${rootProject.ext["gitVersion"]}"
 
     tasks
         .withType<JavaCompile>()

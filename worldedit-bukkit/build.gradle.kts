@@ -72,3 +72,8 @@ tasks.named<ShadowJar>("shadowJar") {
 tasks.named("assemble").configure {
     dependsOn("shadowJar")
 }
+
+tasks.named<Jar>("jar") {
+    val projectVersion = project.properties["gitVersion"]
+    version = projectVersion.toString()
+}
