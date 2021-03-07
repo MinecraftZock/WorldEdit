@@ -120,3 +120,8 @@ tasks.named<Copy>("processResources") {
         into("lang")
     }
 }
+
+tasks.named<Jar>("jar") {
+    val projectVersion = project.properties["gitVersion"]
+    version = projectVersion.toString()
+}

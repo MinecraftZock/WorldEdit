@@ -11,3 +11,7 @@ repositories {
 dependencies {
     "shade"("net.kyori:text-adapter-bukkit:${Versions.TEXT_EXTRAS}")
 }
+tasks.named<Jar>("jar") {
+    val projectVersion = project.properties["gitVersion"]
+    version = projectVersion.toString()
+}
